@@ -1,8 +1,13 @@
 /* Базовые стили */
 * {
-    margin: 0;
+    margin: 10;
     padding: 0;
     box-sizing: border-box;
+}
+
+header {
+    background-color: #000000;
+    padding: 15px 20px;
 }
 
 nav ul {
@@ -10,6 +15,31 @@ nav ul {
     list-style: none;
     gap: 20px;
     align-items: center;
+    color: white;
+}
+
+body {
+    margin: 0 auto; 
+    padding: 15px 20px;
+}
+
+.text_arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#awesome {
+    background-color: #00BFFF;
+}
+
+#robin {
+    background-color: #4b0082;
+}
+
+#robin_arrow {
+    background-color: #9400D3;
 }
 
 #three_lines {
@@ -20,19 +50,9 @@ nav ul {
     display: none;
 }
 
-body {
-    margin: 0 auto; 
-}
-
-.text_arrow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 @media (min-width: 981px) {
-    body{
+    body {
         max-width: 800px;
     }
     body h2 {
