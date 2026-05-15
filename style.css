@@ -13,7 +13,7 @@ body {
 
 /* Заголовок */
 header {
-    background-color: #1a1a1a;
+    background-color: #474A51;
     padding: 15px 20px;
 }
 
@@ -37,7 +37,7 @@ nav ul li {
     display: none;
 }
 
-/* Секция стрелок */
+/* Секция стрелок для голубого баннера*/
 .text_arrow {
     display: flex;
     justify-content: space-between;
@@ -53,27 +53,96 @@ nav ul li {
 #awesome {
     background-color: #00aaff;
     color: white;
-    padding: 40px 20px;
+    padding: clamp(40px, 10vw, 120px) clamp(20px, 5vw, 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Robin Hood секция (фиолетвая) */
+#awesome h1 {
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+#awesomeblaz {
+    color: #d3d3d3;
+    margin-top: 10px;
+    font-size: clamp(12px, 3vw, 16px);
+}
+
+#awesome > p {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Robin Hood секция */
 .text_arrow:not(#awesome) {
-    background-color: #6600cc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #2C2C2C;
+    color: #CFCFCF;
+}
+
+.text_arrow:not(#awesome) div {
+    flex: 1;
+    padding: clamp(20px, 5vw, 40px) clamp(15px, 4vw, 30px);
+    display: flex;
+    align-items: center;
+}
+
+#robin_arrow {
+    background-color: #c71585;
     color: white;
-    padding: 40px 20px;
+    width: clamp(60px, 10vw, 150px);
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 5vw, 48px);
+    font-weight: bold;
+    margin: 0;
+}
+
+#robin {
+    font-size: clamp(18px, 4vw, 32px);
+    line-height: 1.3;
+    margin: 0;
 }
 
 /* Картинки */
+.photo-arrow-section {
+    display: flex;
+    align-items: stretch;  
+    background-color: #e0e0e0;
+}
+
 .images {
     display: flex;
+    flex: 3;  
     margin: 0;
+}
+
+.photo-arrow {
+    background-color: #4b0082;
+    color: white;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(30px, 8vw, 70px);
+    font-weight: bold;
+    min-height: 100%; 
 }
 
 .gallery_image {
     width: 50%;
     height: auto;
     display: block;
-    border-radius: 0;
 }
 
 /* Карточки или секции с текстом */
@@ -99,9 +168,12 @@ nav ul li {
     flex: 1 1 300px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+#blazblue {
     color: #0077cc;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 38px;
 }
 
 .card p {
@@ -115,7 +187,7 @@ nav ul li {
 /* Монитор */
 @media (min-width: 981px) {
     body {
-        max-width: 1000px;
+        max-width: 900px;
     }
     
     h1 {
@@ -178,13 +250,38 @@ nav ul li {
         justify-content: space-between;
         width: 100%;
     }
+
+    .photo-arrow-section {
+        flex-direction: column;  
+        align-items: stretch;    
+    }
     
-    .text_arrow {
+    .photo-arrow {
+        width: 100%;            
+        min-height: 300px;    
+        height: auto;            
+    }
+    
+    .images {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .gallery_image {
+        width: 100%;             
+        height: auto;
+    }
+
+    #awesome {
         flex-direction: column;
-        text-align: center;
+        text-align: left;  
+        align-items: flex-start;  
         gap: 15px;
     }
     
+    #awesome div {
+        width: 100%;
+    }
     .cards-section {
         padding: 30px 0;
     }
