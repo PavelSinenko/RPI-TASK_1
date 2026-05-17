@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* Заголовок */
+header {
+    background-color: #474A51;
+    padding: 15px 20px;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -12,90 +24,269 @@ nav ul {
     align-items: center;
 }
 
-#three_lines {
-    display: none;
+nav ul li {
+    color: white;
 }
 
+/* Секция со скрытыми иконками */
 #navigation {
     display: none;
 }
 
-body {
-    margin: 0 auto; 
+#three_lines {
+    display: none;
 }
 
+/* Секция стрелок для голубого баннера*/
 .text_arrow {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.text_arrow p {
+    font-size: 24px;
+    font-weight: bold;
+}
 
+/* Первый баннер(голубой) */
+#awesome {
+    background-color: #00aaff;
+    color: white;
+    padding: clamp(40px, 10vw, 120px) clamp(20px, 5vw, 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#awesome h1 {
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+#awesomeblaz {
+    color: #d3d3d3;
+    margin-top: 10px;
+    font-size: clamp(12px, 3vw, 16px);
+}
+
+#awesome > p {
+    font-size: clamp(24px, 5vw, 40px);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Robin Hood секция */
+.text_arrow:not(#awesome) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #2C2C2C;
+    color: #CFCFCF;
+}
+
+.text_arrow:not(#awesome) div {
+    flex: 1;
+    padding: clamp(20px, 5vw, 40px) clamp(15px, 4vw, 30px);
+    display: flex;
+    align-items: center;
+}
+
+#robin_arrow {
+    background-color: #c71585;
+    color: white;
+    width: clamp(60px, 10vw, 150px);
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 5vw, 48px);
+    font-weight: bold;
+    margin: 0;
+}
+
+#robin {
+    font-size: clamp(18px, 4vw, 32px);
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Картинки */
+.photo-arrow-section {
+    display: flex;
+    align-items: stretch;  
+    background-color: #e0e0e0;
+}
+
+.images {
+    display: flex;
+    flex: 3;  
+    margin: 0;
+}
+
+.photo-arrow {
+    background-color: #4b0082;
+    color: white;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(30px, 8vw, 70px);
+    font-weight: bold;
+    min-height: 100%; 
+}
+
+.gallery_image {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+/* Карточки или секции с текстом */
+.cards-section {
+    background-color: #e0e0e0;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;  
+    margin: 0 auto;  
+    padding: 0 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 300px;
+}
+
+#blazblue {
+    color: #0077cc;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 38px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Настройки для разных экранов */
+
+/* Монитор */
 @media (min-width: 981px) {
-    body{
-        max-width: 800px;
+    body {
+        max-width: 900px;
     }
-    body h2 {
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
         font-size: 32px;
+    }
+    
+    .cards-container {
+        gap: 30px;
     }
 }
 
+/* Планшеты */
 @media (min-width: 641px) and (max-width: 979px) {
     body {
         padding-left: 30px;
         padding-right: 30px;
     }
-
-    body h2 {
+    
+    h2 {
         font-size: 28px;
     }
-
+    
     .card {
         flex: 1 1 calc(50% - 20px);
     }
 }
 
-/* для мобильных */
+/* Мобилки */
 @media (max-width: 640px) {
     body {
         padding-left: 15px;
         padding-right: 15px;
     }
-
-    body h2 {
-        font-size: 24px;
+    
+    h1 {
+        font-size: 22px;
     }
-
+    
+    h2 {
+        font-size: 20px;
+    }
+    
     nav ul li:not(#three_lines):not(#navigation) {
-        display: none;  
+        display: none;
     }
-
-    #three_lines {
-        display: block;
-        justify-content: flex-end;
-    }
-
+    
     #navigation {
         display: block;
-        justify-content: flex-start;
     }
-
+    
+    #three_lines {
+        display: block;
+    }
+    
     nav ul {
-        justify-content: space-between; 
+        justify-content: space-between;
+        width: 100%;
     }
-}
 
-/* Стили для карточек */
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
+    .photo-arrow-section {
+        flex-direction: column;  
+        align-items: stretch;    
+    }
+    
+    .photo-arrow {
+        width: 100%;            
+        min-height: 300px;    
+        height: auto;            
+    }
+    
+    .images {
+        flex-direction: column; 
+        width: 100%;
+    }
 
-.card {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    flex: 1 1 300px;
+    .gallery_image {
+        width: 100%;             
+        height: auto;
+    }
+
+    #awesome {
+        flex-direction: column;
+        text-align: left;  
+        align-items: flex-start;  
+        gap: 15px;
+    }
+    
+    #awesome div {
+        width: 100%;
+    }
+    .cards-section {
+        padding: 30px 0;
+    }
+    
+    .cards-container {
+        padding: 0 15px;
+    }
 }
